@@ -1,17 +1,18 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <title>Главная Grand Marine</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href={% static 'css/style.css' %}>
+    <link rel="stylesheet" href={% static 'fonts/font-awesome/css/font-awesome.css'%}>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <a href="/"><img class="logo" src="/static/img/logo.png" alt="Logo"></a>
+            <a href="/"><img class="logo" src={% static 'img/logo.png' %} alt="Logo"></a>
             <ul class="menu">
                 <li class="menu-list"><a class="menu-link" href="/">Главная</a></li>
                 <li class="menu-list"><a class="menu-link" href="/products/">Каталог</a></li>
@@ -21,9 +22,9 @@
         <h2>Главная</h2>
         <p>Добро пожаловать, в&nbsp;Grand Marine!</p>
         <p>Мы готовы осуществить Вашу мечту!</p>
-        <img class="img_main" src="/static/img/main.jpg">
+        <img class="img_main" src={% static 'img/main.jpg' %}>
         <div class="footer">
-            <img class="img_footer" src="/static/img/yacht.png">
+            <img class="img_footer" src={% static 'img/yacht.png' %}>
             <p>&copy;&nbsp;Все права защищены</p>
         </div>
     </div>
