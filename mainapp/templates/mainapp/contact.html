@@ -1,45 +1,28 @@
+{% extends 'mainapp/base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Контакты Grand Marine</title>
-    <link rel="stylesheet" type="text/css" href={% static 'css/style.css' %}>
-    <link rel="stylesheet" href={% static 'fonts/font-awesome/css/font-awesome.css'%}>
-</head>
+{% block title %}
+<title>Контакты Grand Marine</title>
+{% endblock %}
 
-<body>
-    <div class="container">
-        <div class="header">
-            <a href="{% url 'main' %}"><img class="logo" src={% static 'img/logo.png' %} alt="Logo"></a>
-            <ul class="menu">
-                <li class="menu-list"><a class="menu-link" href="{% url 'main' %}">Главная</a></li>
-                <li class="menu-list"><a class="menu-link" href="{% url 'products' %}">Каталог</a></li>
-                <li class="menu-list"><a class="menu-link" href="{% url 'contact' %}">Контакты</a></li>
-            </ul>
-        </div>
-        <h2>Контакты</h2>
-        <h3>Напишите нам</h3>
-        <form action="">
-            <input class="cont_input" type="text" size="50" placeholder="Введите Ваше имя"><br><br>
-            <input class="cont_input" type="email" size="50" placeholder="Введите вашу почту"><br><br>
-            <input class="cont_input" type="text" size="50" placeholder="Введите тему обращения"><br><br>
-            <textarea class="cont_textarea" rows="8" cols="80" placeholder="Введите сообщение"></textarea><br>
-            <label><input type="checkbox"> Желаю получать новости</label> <br><br>
-            <button class="cont_button" type="submit">Отправить</button>
-            <button class="cont_button" type="reset">Очистить</button>
-        </form>
-        <h3>Адрес</h3>
-        <p>Телефон: 8-800-111-22-33-44</p>
-        <p>Адрес: г. Санкт-Петербург, Наличная улица, 59</p>
-        <p>e-mail: grandmarine@gmail.com</p>
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5c871e6b9b4fbf7e5686966f5160415f62100d33d7b839493e35bf930c019cec&amp;width=100%&amp;height=374&amp;lang=ru_RU&amp;scroll=true"></script>
-        <div class="footer">
-            <img class="img_footer" src={% static 'img/yacht.png' %}>
-            <p>&copy;&nbsp;Все права защищены</p>
-        </div>
-    </div>
-</body>
+{% block name_page %}
+<h2>Контакты</h2>
+{% endblock %}
 
-</html>
+{% block content %}
+<h3>Напишите нам</h3>
+<form action="">
+    <input class="cont_input" type="text" size="50" placeholder="Введите Ваше имя"><br><br>
+    <input class="cont_input" type="email" size="50" placeholder="Введите вашу почту"><br><br>
+    <input class="cont_input" type="text" size="50" placeholder="Введите тему обращения"><br><br>
+    <textarea class="cont_textarea" rows="8" cols="80" placeholder="Введите сообщение"></textarea><br>
+    <label><input type="checkbox"> Желаю получать новости</label> <br><br>
+    <button class="cont_button" type="submit">Отправить</button>
+    <button class="cont_button" type="reset">Очистить</button>
+</form>
+<h3>Адрес</h3>
+<p>Телефон: 8-800-111-22-33-44</p>
+<p>Адрес: г. Санкт-Петербург, Наличная улица, 59</p>
+<p>e-mail: grandmarine@gmail.com</p>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5c871e6b9b4fbf7e5686966f5160415f62100d33d7b839493e35bf930c019cec&amp;width=100%&amp;height=374&amp;lang=ru_RU&amp;scroll=true"></script>
+{% endblock %}

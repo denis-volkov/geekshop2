@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    {% block title %}
+    <title>Defaul Title</title>
+    {%endblock%}
+
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href={% static 'css/style.css' %}>
+    <link rel="stylesheet" href={% static 'fonts/font-awesome/css/font-awesome.css'%}>
+    {% endblock %}
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{% url 'main' %}"><img class="logo" src={% static 'img/logo.png' %} alt="Logo"></a>
+            <ul class="menu">
+                <li class="menu-list"><a class="menu-link" href="{% url 'main' %}">Главная</a></li>
+                <li class="menu-list"><a class="menu-link" href="{% url 'products' %}">Каталог</a></li>
+                <li class="menu-list"><a class="menu-link" href="{% url 'contact' %}">Контакты</a></li>
+            </ul>
+        </div>
+        {% block name_page %}
+        <h2>Default Name Page</h2>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="footer">
+            <img class="img_footer" src={% static 'img/yacht.png' %}>
+            <p>&copy;&nbsp;Все права защищены</p>
+        </div>
+    </div>
+</body>
+
+</html>
