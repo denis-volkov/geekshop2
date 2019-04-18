@@ -12,11 +12,11 @@
 <body>
     <div class="container">
         <div class="header">
-            <a href="/"><img class="logo" src={% static 'img/logo.png' %} alt="Logo"></a>
+            <a href="{% url 'main' %}"><img class="logo" src={% static 'img/logo.png' %} alt="Logo"></a>
             <ul class="menu">
-                <li class="menu-list"><a class="menu-link" href="/">Главная</a></li>
-                <li class="menu-list"><a class="menu-link" href="/products/">Каталог</a></li>
-                <li class="menu-list"><a class="menu-link" href="/contact/">Контакты</a></li>
+                <li class="menu-list"><a class="menu-link" href="{% url 'main' %}">Главная</a></li>
+                <li class="menu-list"><a class="menu-link" href="{% url 'products' %}">Каталог</a></li>
+                <li class="menu-list"><a class="menu-link" href="{% url 'contact' %}">Контакты</a></li>
             </ul>
         </div>
         <h2>Контакты</h2>
