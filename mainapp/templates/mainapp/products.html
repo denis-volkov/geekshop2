@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}
-<title>Каталог Grand Marine</title>
+<title>{{ title | title}}</title>
 {% endblock %}
 
 {% block name_page %}
@@ -20,4 +20,18 @@
 
     <a href="/products/Benetti Veloce 140.html"><div class="catalog_prodict"><img class="img_catalog" src={% static 'img/Benetti Veloce 140.jpg' %} alt="Яхта Benetti Veloce 140" title="Яхта Benetti Veloce 140"><p>Benetti Veloce 140</p></div></a>
 </div>
+
+{% for product in products %}
+  <div class="block">
+    <a href="#">
+      <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}"> 
+      <div class="text">
+        <h3>{{ product.category.name }}</h3>        
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description }}</p>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
 {% endblock %}

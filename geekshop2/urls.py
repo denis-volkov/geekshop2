@@ -18,17 +18,18 @@ from django.urls import path
 import mainapp.views as mainapp
 from django.conf import settings
 from django.conf.urls.static import static
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+from django.conf.urls import include
 
 urlpatterns = [
     path('', mainapp.main, name='main'),
-    path('products/', mainapp.products, name='products'),
-    path('products_products_all/', mainapp.products, name='products_all'),
-    path('products_speed/', mainapp.products, name='products_speed'),
-    path('products_premium/', mainapp.products, name='products_premium'),
-    path('products_other/', mainapp.products, name='products_other'),
+    path('products/', include('mainapp.urls', namespace='products')),
+    # path('products_products_all/', mainapp.products, name='products_all'),
+    # path('products_speed/', mainapp.products, name='products_speed'),
+    # path('products_premium/', mainapp.products, name='products_premium'),
+    # path('products_other/', mainapp.products, name='products_other'),
     path('contact/', mainapp.contact, name='contact'),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
