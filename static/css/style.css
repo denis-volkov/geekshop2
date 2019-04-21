@@ -159,5 +159,5 @@ input[type="email"]:focus {
     justify-content: space-around;
 }
 .active {
-    background-color: lightcyan;
+    background-color: aquamarine;
 }
